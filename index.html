@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your GitHub Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            background: url('city-skyline.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        #about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enrique Loza</h1>
+        <p> Computer Science student</p>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Your Photo">
+        <p>I’m a senior at Saint Xavier University (SXU) pursuing a degree in Computer Science. I'm passionate about software engineering and data science, always eager to expand my skills through hands-on experience. I'm currently looking for opportunities in tech, whether it's a job or an internship, to apply my knowledge and grow as a developer. Outside of coding, I enjoy gaming and hitting the gym. </p>
+    </section>
+    
+    <section id="repositories">
+        <h2>My GitHub Repositories</h2>
+        <ul id="repo-list"></ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: enrique.loza02@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/enrique-loza-3a8343278/">LinkedIn</a></p>
+    </section>
+    
+    <section id="resume">
+        <h2>Resume</h2>
+        <iframe src="resume.pdf" width="100%" height="600px"></iframe>
+    </section>
+    
+    <script>
+        const username = "kikermz";
+        fetch(`https://api.github.com/users/${username}/repos`)
+            .then(response => response.json())
+            .then(data => {
+                const repoList = document.getElementById("repo-list");
+                data.forEach(repo => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+                    repoList.appendChild(li);
+                });
+            })
+            .catch(error => console.error("Error fetching repos:", error));
+    </script>
+</body>
+</html>

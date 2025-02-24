@@ -1,0 +1,71 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background: url('city-skyline.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    font-size: 1.2em;
+}
+
+/* Sections styling */
+section {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+    color: #ffffff;
+}
+
+/* Links */
+a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+#repo-list li {
+    background-color: #292929;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    list-style: none;
+}
+
+
+#contact a {
+    color: #ff9800;
+}
+
+iframe {
+    border: none;
+    background-color: #1e1e1e;
+}
+
+/* Profile picture styling */
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #ffffff;
+}
+
